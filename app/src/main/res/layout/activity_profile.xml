@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?attr/actionBarSize">
+        <TextView
+            android:id="@+id/txt_profile_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Profile"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_margin="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="false"/>
+        <TextView
+            android:id="@+id/txt_profile_fullname"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:hint="Your Full Name"
+            android:textSize="17sp"
+            android:textAlignment="textStart"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_below="@id/txt_profile_header"/>
+        <TextView
+            android:id="@+id/txt_profile_email"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:textSize="17sp"
+            android:hint="Your Email"
+            android:textAlignment="textStart"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_below="@id/txt_profile_fullname"/>
+        <TextView
+            android:id="@+id/txt_profileType"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:hint="You are logged in as a "
+            android:textAlignment="textStart"
+            android:textSize="17sp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_below="@id/txt_profile_email"/>
+        <Button
+            android:id="@+id/btn_profile_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+
+            android:layout_margin="40dp"
+            android:text="@string/logout"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:layout_alignParentBottom="true"
+            android:textStyle="bold"
+            android:backgroundTint="@color/appGreen"/>
+
+
+    </RelativeLayout>
+
+    <!-- <com.google.android.material.bottomnavigation.BottomNavigationView
+         android:id="@+id/bnView"
+         android:layout_width="match_parent"
+         android:layout_height="?attr/actionBarSize"
+         android:background="@color/appGreen"
+         app:menu="@menu/nav_items"
+         android:layout_alignParentBottom="true"
+         app:f
+
+         /> -->
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/baView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:fabCradleMargin="10dp"
+        android:background="@color/appGreen"
+        app:fabCradleRoundedCornerRadius="50dp"
+        app:fabCradleVerticalOffset="5dp"
+        android:layout_gravity="bottom"
+        >
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bnView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="16dp"
+            android:layout_gravity="bottom"
+            app:menu="@menu/nav_items"
+            android:layout_alignParentBottom="true"
+
+            >
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:contentDescription="Add Report"
+        android:background="@color/appGreen"
+        android:backgroundTint="@color/appGreen"
+        android:src="@drawable/report_add"
+        android:tint="@color/appGreen"
+        app:layout_anchor="@+id/container"
+        app:layout_anchorGravity="bottom|center" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
