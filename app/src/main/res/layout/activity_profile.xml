@@ -56,6 +56,26 @@
             android:layout_centerVertical="true"
             android:layout_below="@id/txt_profile_email"/>
         <Button
+            android:id="@+id/btn_edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:layout_below="@+id/txt_profileType"
+            android:layout_marginTop="30dp"/>
+       <!-- <Button
+            android:id="@+id/btn_change_psswd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Password"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:layout_below="@+id/btn_edit_profile"
+            android:layout_marginTop="30dp"/>-->
+        <Button
             android:id="@+id/btn_profile_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

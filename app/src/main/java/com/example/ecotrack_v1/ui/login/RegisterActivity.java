@@ -48,7 +48,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.WriteBatch;
 import com.klinker.android.link_builder.Link;
 
 import org.w3c.dom.Text;
@@ -149,12 +151,45 @@ public class RegisterActivity extends AppCompatActivity {
                         Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.GONE);
                         userID = auth.getCurrentUser().getUid();
-                        DocumentReference documentReference = fStore.collection("Users").document(userID);
+                        DocumentReference documentReference = fStore.collection("users").document(userID);
                         Map<String, Object> user = new HashMap<>();
-                        user.put("FullName", txtFullname);
-                        user.put("Email", txtEmail);
-                        user.put("ProfileType", userProfile);
-                        documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        user.put("fullname", txtFullname);
+                        user.put("email", txtEmail);
+                        user.put("profileType", userProfile);
+                        user.put("greenPoints",10);
+
+                        //Updating the count of users
+                      //  WriteBatch batch = fStore.batch();
+                       // batch.set(documentReference,user);
+
+
+                       /* DocumentReference docCount = fStore.collection("Users").document("TOTAL_USERS");
+                        docCount.update("COUNT", FieldValue.increment(1)).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Log.d(TAG,"total NUMBER OF USERS UPDATE SUCCESS");
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.d(TAG,"TOTAL NUMBER OF USERS UPDATE FAIL");
+                            }
+                        });*/
+
+                    /*  batch.update(docCount,"COUNT", FieldValue.increment(1));
+                        batch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Log.d(TAG, "onSuccess: user profile is created for "+ userID );
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.d(TAG, "onFailure: "+ e.toString());
+                            }
+                        });*/
+
+                       documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
                                 Log.d(TAG, "onSuccess: user profile is created for "+ userID );

@@ -5,11 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.ecotrack_v1.leaderBoard.LeaderBoardActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -17,6 +21,7 @@ public class GreenPointsActivity extends AppCompatActivity {
     BottomNavigationView bnView;
     FloatingActionButton fab;
     TextView txt;
+    Button leaderboard,finalLeaderboard;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +29,32 @@ public class GreenPointsActivity extends AppCompatActivity {
         txt = (TextView) findViewById(R.id.txt_green_points);
         bnView = (BottomNavigationView) findViewById(R.id.bnView);
         fab = (FloatingActionButton) findViewById(R.id.fab);
+        leaderboard = (Button)findViewById(R.id.btn_leaderBoard);
+        finalLeaderboard = findViewById(R.id.btn_LeaderAct);
+      /*  leaderboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new LeaderBoard())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+*/
+     leaderboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(GreenPointsActivity.this,LeaderBoard.class));
+
+            }
+        });
+     finalLeaderboard.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+             startActivity(new Intent(GreenPointsActivity.this, LeaderBoardActivity.class));
+         }
+     });
         txt.setText("Your Green Points will appear here!");
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

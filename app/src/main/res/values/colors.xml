@@ -5,5 +5,8 @@
     <color name="appGreen">#5F9EA0</color>
     <color name="purple_200">#FF8886FC</color>
     <color name="purple_500">#FF6200EE</color>
+    <color name="red">#EE1E0E</color>
+    <color name="main_backgroun">#FDF9F9</color>
+    <color name="green">#3EB343</color>
 
 </resources>

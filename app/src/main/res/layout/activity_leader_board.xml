@@ -4,6 +4,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".LeaderBoard">
+ <LinearLayout
+     android:id="@+id/linear_Leader"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="vertical"
+     android:padding="8dp"
+     android:elevation="3dp"
+     app:layout_constraintLeft_toLeftOf="parent"
+     app:layout_constraintLeft_toRightOf="parent"
+     app:layout_constraintBaseline_toTopOf="parent"
+     >
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Users : 0"
+         android:id="@+id/total_users"
+         android:textColor="@color/black"
+         android:layout_marginLeft="16dp"
+         android:layout_marginBottom="8dp"
+         />
+     <View
+         android:layout_width="match_parent"
+         android:layout_height="1dp"
+         android:background="?android:attr/listDivider"
+         />
 
+ </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/users_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_Leader"
+        app:layout_constraintBottom_toBottomOf="@id/Linear3_leader"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+    <LinearLayout
+        android:id="@+id/Linear3_leader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_backgroun"
+        android:padding="8dp"
+        android:elevation="3dp"
+        android:layout_margin="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/img_txt"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/common_full_open_on_phone"
+            android:backgroundTint="@color/green"
+            android:text="ME"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical"
+
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/your_score"
+                android:text="Score: 0"
+                />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/your_rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rank: NA"
+            android:textColor="@color/black"
+            android:gravity="end"
+            android:layout_weight="1"
+            android:layout_marginRight="24dp"
+            />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

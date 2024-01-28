@@ -18,5 +18,6 @@
     <string name="prompt_fullname">Full Name</string>
     <string name="logout">Logout\n</string>
     <string name="LoginPrompt">Already a user? Login</string>
+    <string name="my_api_key">AIzaSyBZCU0xBr1697ajAuOyBJdkFjlaXXrw5Uk</string>
 
 </resources>
