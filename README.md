@@ -135,7 +135,7 @@ After cloning is completed, navigate to the corresponding directory and open and
 
 ## 🔗 Links
 
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/chiranjeevi-b-s-291812221/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nitesh-yadav-b8847616b/)
 
 
     
